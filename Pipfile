@@ -4,8 +4,19 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+starlette = "*"
+uvicorn = "*"
+crc = "*"
+webargs = "*"
+pony = "*"
+PyYAML = "*"
 
 [dev-packages]
+autopep8 = "*"
+pylint = "*"
+
+[scripts]
+server = "uvicorn main:app --reload"
 
 [requires]
 python_version = "3.8"
