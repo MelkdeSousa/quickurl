@@ -11,7 +11,7 @@ from starlette.config import Config
 from pony.orm import Database, db_session, set_sql_debug, commit
 from pony.orm.core import PrimaryKey, Required
 
-from crc import Crc16, CrcCalculator
+from nanoid import generate
 
 
 config = Config('.env')
@@ -35,13 +35,13 @@ class Link(db.Entity):
     _table_ = 'links'
 
     id = PrimaryKey(str, default=lambda: str(uuid4()))
-    id_shortened_url = Required(int, unique=True)
+    id_shortened_url = Required(str, unique=True)
     shortened_url = Required(str, unique=True)
     url_original = Required(str, unique=True)
 
 
 @db_session
-def create_link(shortened_url: str, id_shortened_url: int, url_original: str):
+def create_link(shortened_url: str, id_shortened_url: str, url_original: str):
     link = {
         "id_shortened_url": id_shortened_url,
         "shortened_url": shortened_url,
@@ -63,10 +63,7 @@ async def shorten(request: Request) -> JSONResponse:
 
     url = request._json['url']
 
-    data = bytes(url, encoding='utf-8')
-    crc_calculator = CrcCalculator(Crc16.PROFIBUS)
-
-    id = crc_calculator.calculate_checksum(data)
+    id: str = generate('1234567890abcdef', 8)
 
     shortened_url = f'{path}/{id}'
 

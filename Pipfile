@@ -10,6 +10,7 @@ crc = "*"
 webargs = "*"
 pony = "*"
 PyYAML = "*"
+nanoid = "*"
 
 [dev-packages]
 autopep8 = "*"

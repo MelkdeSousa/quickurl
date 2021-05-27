@@ -4,17 +4,17 @@
 
 ## Requisitos
 
-[] O serviço irá receber inicialmente como parâmetro uma URL que deverá ser encurtada seguindo as seguintes regras:
+[x] O serviço irá receber inicialmente como parâmetro uma URL que deverá ser encurtada seguindo as seguintes regras:
 
-[] Mínimo de 5 e máximo de 10 caracteres.
+[x] Mínimo de 5 e máximo de 10 caracteres.
 
-[] Apenas letras e números.
+[x] Apenas letras e números.
 
-[] A url retornada deverá ser salva no banco de dados
+[x] A url retornada deverá ser salva no banco de dados
 
 [] Possuir um prazo de validade (tempo a definir)
 
-[] Receber uma url encurtada, deverá fazer o redirecionamento para a url salva no banco.
+[x] Receber uma url encurtada, deverá fazer o redirecionamento para a url salva no banco.
 
 ### Exemplo ao encurtar
 
