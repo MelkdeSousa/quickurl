@@ -22,7 +22,7 @@
 
 ```json
 {
-  newUrl: "http://localhost:8081/abc123ab";
+  "newUrl": "http://localhost:8081/abc123ab"
 }
 ```
 
